@@ -5,7 +5,7 @@ import fastifyCompress from '@fastify/compress';
 
 import 'dotenv/config';
 
-const PORT = process.env.SERVER_PORT || 4000;
+const PORT = Number(process.env.SERVER_PORT || 4000);
 
 (async () => {
     const fastify = Fastify({ ignoreTrailingSlash: true });
@@ -32,7 +32,7 @@ const PORT = process.env.SERVER_PORT || 4000;
             return reply.redirect(`${request.url}`.replace(/\/\//g, '/'));
         });
 
-        await fastify.listen(PORT);
+        await fastify.listen({ port: PORT });
 
         console.log(`Server listening on port ${PORT} ...`);
     } catch (err) {
