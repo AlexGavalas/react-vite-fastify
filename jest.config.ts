@@ -9,15 +9,9 @@ const config: Config.InitialOptions = {
 
     testEnvironment: 'jsdom',
 
-    preset: 'ts-jest',
+    preset: 'ts-jest/presets/default-esm',
 
     setupFilesAfterEnv: ['<rootDir>/src/setup-tests.ts'],
-
-    globals: {
-        'ts-jest': {
-            isolatedModules: true,
-        },
-    },
 };
 
 export default config;
