@@ -11,7 +11,11 @@ const config: Config.InitialOptions = {
 
     preset: 'ts-jest/presets/default-esm',
 
-    setupFilesAfterEnv: ['<rootDir>/src/setup-tests.ts'],
+    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+
+    transform: {
+        '\\.css\\.ts$': '@vanilla-extract/jest-transform',
+    },
 };
 
 export default config;

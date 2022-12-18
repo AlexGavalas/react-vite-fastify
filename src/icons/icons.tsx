@@ -11,12 +11,6 @@ const Icon: FC<{ id: string }> = ({ id, ...props }) => (
     </svg>
 );
 
-const App: FC = () => (
-    <div>
-        {icons.map((id) => (
-            <Icon key={id} id={id} />
-        ))}
-    </div>
-);
-
-export default App;
+export const Icons = () => {
+    return icons.map((id) => <Icon key={id} id={id} />);
+};
